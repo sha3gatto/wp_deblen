@@ -151,4 +151,4 @@ require get_template_directory() . '/inc/class-jsonmanifest.php';
 /**
  * Load icon functions from svg.
  */
-require get_template_directory() . '/inc/icon-functions.php';
+//require get_template_directory() . '/inc/icon-functions.php';

@@ -1,0 +1,206 @@
+/*
+ Theme Name:   BootstrapFast Child
+ Theme URI:    https://carl.alber2.com/theme/bootstrapfast-child
+ Description:  BootstrapFast Child Theme
+ Author:       Aleks Bujko
+ Author URI:   http://example.com
+ Template:     bootstrapfast
+ Version:      1.0.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, flexible-header, custom-logo, featured-image-header, featured-images, sticky-post, theme-options, blog, news
+ Text Domain:  bootstrapfast-child
+*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #e6e6e6;
+	font-family: Arial;
+	font-size: 0.8em !important;
+}
+
+/*HEADER*/
+
+header#masthead {
+	background-color: unset !important;
+}
+
+	.site-branding {
+		background-color: #7e7e7e;
+		height: 190px;
+		width: 900px;
+		margin: -22px auto;
+	}
+
+	#site-header {
+		float: left;
+		width: 25%;
+		padding: 1%;
+	}
+
+		#site-header img {
+			width: 142px;
+			height: 166px;
+		}
+
+	#btnResidential {
+		float: left;
+		width: 50%;
+		padding: 2% 1%;
+		color: black;
+		font-size: 4em;
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+	}
+
+		#btnResidential p {
+			margin-bottom: 0;
+		}
+
+	#btnSmart {
+		float: right;
+		width: 25%;
+		padding: 1%;
+	}
+
+		#btnSmart img {
+			float: right;
+			height: 166px;
+			width: 140px;
+		}
+
+/*MAIN CONTENT*/
+
+#rental-content {
+	background-color: white;
+	width: 900px;
+	margin: 0 auto;
+}
+
+.rental-container {
+	padding: 10px;
+	margin: 0px;
+}
+
+.error {
+	color: #FF0000;
+}
+
+/*DETAILS AND LISTINGS*/
+
+#more-content {
+	padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+	#menu-page-reference .menu-item {
+		margin: 0 9%;
+	}
+
+		#menu-page-reference .menu-item a {
+			padding: 10px 20px;
+			font-size: 24px;
+		}
+
+/*PAGE INFO*/
+
+#page-info {
+	margin: 0 auto;
+	background-color: #c1c0bf;
+	width: 900px;
+}
+
+	.page-info-menu-class {
+		padding-top: 20px;
+		padding-bottom: 40px;
+	}
+
+#menu-page-info,
+#menu-page-reference {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	list-style: none;
+	list-style-image: none;
+	text-align: center;
+}
+
+	#menu-page-info .menu-item,
+	#menu-page-reference .menu-item {
+		display: inline;
+	}
+
+		#menu-page-info .menu-item a,
+		#menu-page-reference .menu-item a {
+			text-decoration: none;
+			color: #fff;
+			background-color: #777;
+			
+			border: 5px;
+			border-radius: 15px;
+		}
+
+		#menu-page-info .menu-item a {
+			padding: 3px 10px;
+		}
+
+			#menu-page-info .menu-item a:hover,
+			#menu-page-reference .menu-item a:hover {
+				color: #fff;
+				background-color: #E54545;
+			}
+
+/* FORMS */
+
+.button-form {
+    background: #777 !important;
+    border: none !important;
+	-webkit-border-radius: 11 !important;
+	-moz-border-radius: 11 !important;
+	border-radius: 11px !important;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button-form:hover {
+    color: #fff;
+    background-color: #E54545 !important;
+}
+
+/*FOOTER*/
+
+	#site-info {
+		background-color: #7e7e7e;
+		height: 40px;
+		width: 900px;
+		clear: both;
+		margin: 10px;
+		text-align: center;
+		color: white;
+		font-size: 12px;
+		margin: 0 auto;
+	}
+
+		.copyright {
+			padding: 10px;
+			margin: 0px;
+		}
+
+			.copyright a:link,
+			.copyright a:visited,
+			.copyright a:hover,
+			.copyright a:active {
+				color: white;
+				text-decoration: none;
+			}
