@@ -24,71 +24,79 @@ $totalRows = $results[0]->TotalRows;
 $pagesSum = ceil($totalRows / $pages_on_site);
 ?>
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
-	<div id="content-listings">
-		<div id="container-listings">
-			<div id="leftcolumn">
-				<?php foreach ($results as $k => $v) { ?>
-				<div class="picture-container">
-					<a href="http://wp_deblen.7psh/details/?idProperties=<?php echo $v->idProperties; ?>">
-						<img alt="" src="../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $v->Path; ?>">
-					</a>
-					<div class="caption">
-						<p>
-							<b>Available:&nbsp;</b>
-							<?php
-							if ($v->MoveInReady == 1) {
-								echo 'Move in READY';
-							} else {
-								echo $v->MoveInReady;
-							}
-							?>
-						</p>
+	<div id="mid-main-content">
+		<div class="mid-main-container">
+			<div id="container-listings">
+				<table>
+					<tbody>
+						<?php foreach ($results as $k => $v) { ?>
+						<tr>
+							<td class="listing-row-image">
+								<div class="listing-image">
+									<a href="http://wp_deblen.7psh/details/?idProperties=<?php echo $v->idProperties; ?>">
+										<img alt="" src="../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $v->Path; ?>" width="380">
+									</a>
+									<p class="caption">
+										<b>Available:&nbsp;</b>
+										<?php
+										if ($v->MoveInReady == 1) {
+											echo 'Move in READY';
+										} else {
+											echo $v->MoveInReady;
+										}
+										?>
+									</p>
+								</div>
+							</td>
+							<td class="listing-row-description">
+								<div class="listing-description">
+									<h1><?php echo $v->Description; ?>&nbsp;| Rent:
+										<span>$<?php echo $v->Rent; ?></span>
+									</h1>
+									<h2>
+										<?php echo $v->Address, ', ', $v->City, ', ', $v->State; ?>
+									</h2>
+									<p class="propertyDesc"><?php echo $v->Details; ?></p>
+									<div class="nav-mid-4">
+										<nav class="page-listings">
+										<?php
+										wp_nav_menu( array(
+										'theme_location' => 'page-listings-menu',
+										'container_class' => 'page-listings-menu-class',
+										'walker' => new LinkToDetails_Walker(),
+										'walker_arg' => $v->idProperties ) );?>
+										</nav>
+									</div>
+								</div>
+							</td>
+						</tr>
+						<?php } ?>
+					</tbody>
+				</table>
+				<div id="navigation">
+					<div class="left-paging">
+						<?php if ($current_page > 1) { ?>
+							<a class="button-form" href="?pageno=1">First</a>
+							<a class="button-form" href="?pageno=<?php echo $current_page-1; ?>">Prev</a>
+						<?php } else { ?>
+							<div class="disabled-paging">
+								<a href="#" class="button-form">First</a>
+								<a href="#" class="button-form">Prev</a>
+							</div>
+						<?php } ?>
 					</div>
-				</div>
-				<?php } ?>
-			</div>
-			<div id="rightcolumn">
-				<?php foreach ($results as $k => $v) { ?>
-				<div class="description-container">
-					<h1><?php echo $v->Description; ?>&nbsp;| Rent:
-						<span>$<?php echo $v->Rent; ?></span>
-					</h1>
-					<h2>
-						<?php echo $v->Address, ', ', $v->City, ', ', $v->State; ?>
-					</h2>
-					<p class="propertyDesc"><?php echo $v->Details; ?></p>
-					<div class="menu-listings">
-						<nav id="page-listings">
-						<?php
-						wp_nav_menu( array(
-						'theme_location' => 'page-listings-menu',
-						'container_class' => 'page-listings-menu-class',
-						'walker' => new LinkToDetails_Walker(),
-						'walker_arg' => $v->idProperties ) );?>
-						</nav>
+					<p class="info-paging">Page <?php echo $current_page, ' of ', $pagesSum; ?></p>
+					<div class="right-paging">
+						<?php if ($current_page < $pagesSum) { ?>
+							<a class="button-form" href="?pageno=<?php echo $current_page+1; ?>">Next</a>
+							<a class="button-form" href="?pageno=<?php echo $pagesSum; ?>">Last</a>
+						<?php } else { ?>
+							<div class="disabled-paging">
+								<a href="#" class="button-form">Next</a>
+								<a href="#" class="button-form">Last</a>
+							</div>
+						<?php } ?>
 					</div>
-				</div>
-				<?php } ?>
-			</div>
-			<div id="navigation">
-				<div class="left-link">
-					<?php if ($current_page > 1) { ?>
-						<a class="first-link" href="http://wp_deblen.7psh/listings/?pageno=1">First</a>
-						<a class="prev-link" href="http://wp_deblen.7psh/listings/?pageno=<?php echo $current_page-1; ?>">Prev</a>
-					<?php } else { ?>
-						<p class="off-first-link">First</p>
-						<p class="off-prev-link">Prev</p>
-					<?php } ?>
-				</div>
-				<p class="description-paging">Page <?php echo $current_page, ' of ', $pagesSum; ?></p>
-				<div class="right-link">
-					<?php if ($current_page < $pagesSum) { ?>
-						<a class="next-link" href="http://wp_deblen.7psh/listings/?pageno=<?php echo $current_page+1; ?>">Next</a>
-						<a class="last-link" href="http://wp_deblen.7psh/listings/?pageno=<?php echo $pagesSum; ?>">Last</a>
-					<?php } else { ?>
-						<p class="off-next-link">Next</p>
-						<p class="off-last-link">Last</p>
-					<?php } ?>
 				</div>
 			</div>
 		</div>

@@ -1,0 +1,16 @@
+#how-to-apply {
+	color: $descriptionPropertyText;
+	h1 {
+		color: $descriptionH1;
+		font-size: $descriptionH1FS;
+	}
+
+	p {
+		font-size: 1.3em;
+		padding: 0 90px 0 20px;
+
+		.upper-case {
+			text-transform: uppercase;
+		}
+	}
+}

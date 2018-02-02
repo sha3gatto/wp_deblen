@@ -33,7 +33,7 @@ function validation($post, $type) {
 
 	if (empty($post["problem"]) && $type === 'repair_notice') {
 		$valid['problemErr'] = "Problem description is required";
-	} else {
+	} elseif (!empty($post["problem"]) && $type === 'repair_notice') {
 		$valid['problem'] = test_input($post["problem"]);
 		if (!preg_match("/^[a-zA-Z0-9 ]+$/",$valid['problem'])) {
 			$valid['problemErr'] = "Invalid problem description format";
@@ -42,7 +42,7 @@ function validation($post, $type) {
 
 	if (empty($_POST["renewal_period"]) && $type === 'lease_renewal') {
 		$valid['renewalPeriodErr'] = "Lease renewal is required";
-	} else {
+	} elseif (!empty($_POST["renewal_period"]) && $type === 'lease_renewal') {
 		$valid['renewalPeriod'] = test_input($_POST["renewal_period"]);
 		if (!preg_match("/^[0-9]+$/",$valid['renewalPeriod'])) {
 			$valid['renewalPeriodErr'] = "Invalid lease renewal format";
@@ -51,7 +51,7 @@ function validation($post, $type) {
 
 	if (empty($_POST["email"]) && $type === 'contact_us') {
 		$valid['emailErr'] = "Email is required";
-	} else {
+	} elseif (!empty($_POST["email"]) && $type === 'contact_us') {
 		$valid['email'] = test_input($_POST["email"]);
 		if (!filter_var($valid['email'], FILTER_VALIDATE_EMAIL)) {
 			$valid['emailErr'] = "Invalid email format";
@@ -60,7 +60,7 @@ function validation($post, $type) {
 
 	if (empty($_POST["message"]) && $type === 'contact_us') {
 		$valid['messageErr'] = "Message is required";
-	} else {
+	} elseif (!empty($_POST["message"]) && $type === 'contact_us') {
 		$valid['message'] = test_input($_POST["message"]);
 		if (!preg_match("/^[a-zA-Z0-9\s]*$/",$valid['message'])) {
 			$valid['messageErr'] = "Invalid message format";

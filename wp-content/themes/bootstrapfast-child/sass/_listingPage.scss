@@ -1,0 +1,90 @@
+#container-listings {
+
+	.listing-row-image {
+		width: 43.5%;
+		vertical-align: top;
+		padding-top: 2em;
+
+		.listing-image {
+				@include rental-offer-image();
+
+				.caption {
+					@include caption();
+				}
+		}
+	}
+	.listing-row-description {
+		width: 56%;
+		vertical-align: top;
+		padding-top: 2em;
+		line-height: 1.2;
+
+		.listing-description {
+			padding-left: 20px;
+
+			h1 {
+				@include rental-offer-description-h1($descriptionListingH1FS, 0, .3em);
+
+				span {
+					@include rental-offer-description-span();
+				}
+			}
+
+			h2 {
+				@include rental-offer-description-h2($descriptionListingH2FS, 0, 5px);
+			}
+
+			.propertyDesc {
+				@include rental-offer-description-propertyDesc($descriptionPropertyListingDescFS, .5em);
+			}
+
+			.nav-mid-4 {
+
+				.page-listings-menu-class {
+
+					ul {
+						@include reset-style();
+						@include text-align(right);
+						@include list-style(none);
+
+						.menu-item {
+							@include display(inline);
+
+							a {
+								@include menu-item-a($light, $bottom, 3px, 10px);
+								@include border-radius(15px);
+			
+								&:hover {
+									@include menu-item-a-hover($light, $bottomHover);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	#navigation {
+		margin-left: auto;
+		margin-right: auto;
+		width: 26em;
+		padding: 30px;
+
+		.button-form {
+			@include button-form(1em, 3px, 10px, unset);
+		}
+
+		.left-paging {
+			float: left;
+		}
+
+		.info-paging {
+			float: left;
+			margin-bottom: 0;
+		}
+
+		.right-paging {
+			float: left;
+		}
+	}
+}

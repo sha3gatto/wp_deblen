@@ -1,0 +1,58 @@
+#more-info {
+	color: $descriptionPropertyText;
+
+	#about {
+
+		h1 {
+			color: $descriptionH1;
+			font-size: $descriptionH1FS;
+		}
+
+		#description-about {
+			float: left;
+			width: 80%;
+			font-size: 1.3em;
+			padding: 0 90px 0 20px;
+		}
+
+		#deblenphotosm {
+			float: right;
+			width: 20%;
+		}
+	}
+
+	#core-value {
+
+		h2 {
+			color: $descriptionH2;
+			font-size: 1.7em;
+		}
+
+		#value-list {
+			padding: 0 30px 0 32px;
+			font-size: 1.3em;
+		}
+	}
+
+	#contact-info {
+
+		h3 {
+			color: $descriptionH3;
+			font-size: 1.5em;
+		}
+
+		#list-info {
+			padding: 0 34px 0 19px;
+			font-size: 1.1em;
+
+			#emphase-company-name {
+				font-weight: bold;
+				font-size: 1.2em;
+			}
+
+			p {
+				margin-bottom: .5em;
+			}
+		}
+	}
+}

@@ -17,15 +17,9 @@ $results = $wpdb->get_results( "SELECT PR.idProperties, PH.Path, PR.Description,
 <?php
 //Display the page content/body
 ?>
-<div id="rental-content">
-	<div class="rental-container">
-		<div id="rental-offer-image">
-			<img id="image-house" alt="" src="<?php echo get_template_directory_uri(); ?>-child/photos_properties/<?php echo $results[0]->Path; ?>" width="600" hight="600">
-			<div class="caption">
-				<b>Available:</b> Move in READY 
-			</div>
-		</div>
-		<div id="rental-offer-description">
+<div id="mid-main-content">
+	<div class="mid-main-container">
+		<div class="rental-offer-description">
 			<h1>
 				<?php echo $results[0]->Description; ?>&nbsp;| Rent: 
 				<span>$<?php echo $results[0]->Rent; ?></span>
@@ -33,7 +27,13 @@ $results = $wpdb->get_results( "SELECT PR.idProperties, PH.Path, PR.Description,
 			<h2><?php echo $results[0]->Address, ', ', $results[0]->City, ', ', $results[0]->State; ?></h2>
 			<p class="propertyDesc"><?php echo $results[0]->Details; ?></p>
 		</div>
-		<div id="more-content">
+		<div class="rental-offer-image">
+			<img id="image-house" alt="" src="<?php echo get_template_directory_uri(); ?>-child/photos_properties/<?php echo $results[0]->Path; ?>" width="600" hight="600">
+			<p class="caption">
+				<b>Available:</b> Move in READY 
+			</p>
+		</div>
+		<div id="nav-mid-1">
 			<nav id="page-reference">
 				<?php wp_nav_menu( array(
 				'theme_location' => 'page-reference-menu',
@@ -44,8 +44,7 @@ $results = $wpdb->get_results( "SELECT PR.idProperties, PH.Path, PR.Description,
 		</div>
 	</div>
 </div>
-
-<nav id="page-info">
+<nav id="nav-mid-2">
 	<?php wp_nav_menu( array(
 	'theme_location' => 'page-info-menu',
 	'container_class' => 'page-info-menu-class' ) );?>

@@ -1,0 +1,55 @@
+header#masthead {
+	background-color: unset !important;
+
+	.site-branding {
+		background-color: $secondary;
+		height: 190px;
+		width: 900px;
+		margin: 10px auto 0;
+
+		#site-header {
+			float: left;
+			width: 25%;
+			padding: 1%;
+
+			img {
+				width: 142px;
+				height: 166px;
+			}
+		}
+
+		#btnResidential {
+			float: left;
+			width: 50%;
+			padding: 2% 1%;
+			color: #000;
+			font-size: $btnResidential;
+			font-weight: bold;
+			text-transform: uppercase;
+			text-align: center;
+
+			p {
+				margin-bottom: 0;
+			}
+		}
+
+		#btnSmart {
+			float: right;
+			width: 25%;
+			padding: 1%;
+
+			img {
+				float: right;
+				height: 166px;
+				width: 140px;
+			}
+		}
+	}
+}
+
+
+
+
+
+
+

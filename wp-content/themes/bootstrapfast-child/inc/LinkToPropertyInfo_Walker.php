@@ -3,11 +3,19 @@ class LinkToPropertyInfo_Walker extends Walker_Nav_Menu {
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
 
         if ($item->post_name === "previous") {
-            $item->url .= "?idProperties=" . esc_attr( $args->walker_arg[0] );
+            if (!empty($args->walker_arg[0])) {
+                $item->url .= "?idProperties=" . esc_attr( $args->walker_arg[0] );
+            } else {
+                $disabledPaging = 'disabled-paging';
+            }
         }
 
         if ($item->post_name === "next") {
-            $item->url .= "?idProperties=" . esc_attr( $args->walker_arg[1] );
+            if (!empty($args->walker_arg[1])) {
+                $item->url .= "?idProperties=" . esc_attr( $args->walker_arg[1] );
+            } else {
+                $disabledPaging = 'disabled-paging';
+            }
         }
 
         if ( isset( $args->item_spacing ) && 'discard' === $args->item_spacing ) {
@@ -21,6 +29,7 @@ class LinkToPropertyInfo_Walker extends Walker_Nav_Menu {
 
         $classes = empty( $item->classes ) ? array() : (array) $item->classes;
         $classes[] = 'menu-item-' . $item->ID;
+        $classes[] = empty($disabledPaging) ? '' : $disabledPaging;
 
         /**
          * Filters the arguments for a single nav menu item.

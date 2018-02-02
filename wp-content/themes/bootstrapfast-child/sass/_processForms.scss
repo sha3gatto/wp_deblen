@@ -1,0 +1,68 @@
+.container-form {
+	padding: 20px;
+	color: $descriptionPropertyText;
+	padding: 0 170px 0 0;
+
+	h1 {
+		color: $descriptionH1;
+		font-size: $descriptionH1FS;
+	}
+
+	.content-form {
+
+		padding-left: 20px;
+	
+		p {
+			font-size: 1.3em;
+		}
+	
+		.required {
+			padding: 16px 10px 0 0;
+		}
+	
+		#niceform {
+	
+			.row {
+	
+				.col-25 {
+					float: left;
+					width: 23%;
+					margin-top: 7px;
+					text-align: right;
+	
+					label {
+						padding: 5px 3px 5px 0;
+						display: inline-block;
+						font-size: 1.3em;
+					}
+				}
+	
+				.col-75 {
+					float: left;
+					width: 30%;
+					margin-top: 6px;
+	
+					.frm_inp_fld,
+					.frm_select_fld {
+						width: 100%;
+						padding: 5px;
+						border: 1px solid #ccc;
+						border-radius: 4px;
+						box-sizing: border-box;
+						resize: vertical;
+					}
+				}
+	
+				&:after {
+					content: "";
+					display: table;
+					clear: both;
+				}
+			}
+	
+			.button-position {
+				padding: 3% 47% 3% 47.2%;
+			}
+		}
+	}
+}

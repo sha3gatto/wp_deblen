@@ -1,0 +1,26 @@
+#site-info {
+	clear: both;
+	height: 40px;
+	width: 900px;
+	margin: 10px;
+	margin: 0 auto;
+	background-color: $secondary;
+	color: $light;
+	text-align: center;
+	font-size: $siteInfo;
+
+	.copyright {
+		padding: 10px;
+		margin: 0px;
+
+		a {
+			&:link,
+			&:visited,
+			&:hover,
+			&:active {
+				color: $light;
+				text-decoration: none;
+			}
+		}
+	}
+}

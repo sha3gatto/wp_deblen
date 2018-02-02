@@ -1,0 +1,101 @@
+#mid-main-content {
+	background-color: $light;
+	width: 900px;
+	margin: 0 auto;
+	overflow: auto;
+
+	.mid-main-container {
+		padding: 10px;
+		margin: 0px;
+
+		.rental-offer-description {
+			float: left;
+			width: 45%;
+			padding-right: 1%;
+
+			h1 {
+				@include rental-offer-description-h1($descriptionH1FS, 3px, .67em);
+
+				span {
+					@include rental-offer-description-span();
+				}
+			}
+
+			h2 {
+				@include rental-offer-description-h2($descriptionH2FS, 5px, 25px);
+			}
+
+			.propertyDesc {
+				@include rental-offer-description-propertyDesc($descriptionPropertyDescFS, 1.5em);
+			}
+		}
+
+		.rental-offer-image {
+			float: left;
+			width: 55%;
+			@include rental-offer-image();
+
+			.caption {
+				@include caption();
+			}
+		}
+	}
+}
+
+#nav-mid-1 {
+	padding-top: 50px;
+	padding-bottom: 40px;
+	clear: both;
+
+	#menu-page-reference {
+		@include reset-style();
+		@include text-align(center);
+		@include list-style(none);
+
+		.menu-item {
+			margin: 0 9%;
+			@include display(inline);
+
+			a {
+				padding: 10px 20px;
+				font-size: $buttonLarge;
+				@include menu-item-a($light, $bottom, 3px, 10px);
+				@include border-radius(15px);
+	
+				&:hover {
+					@include menu-item-a-hover($light, $bottomHover);
+				}
+			}
+		}
+	}
+}
+
+#nav-mid-2 {
+	margin: 0 auto;
+	background-color: $tertiary;
+	width: 900px;
+
+	.page-info-menu-class {
+		padding-top: 20px;
+		padding-bottom: 40px;
+
+		#menu-page-info {
+			@include reset-style();
+			@include text-align(center);
+			@include list-style(none);
+
+			.menu-item {
+				@include display(inline);
+
+				a {
+					@include menu-item-a($light, $bottom, 3px, 10px);
+					@include border-radius(15px);
+	
+					&:hover {
+						@include menu-item-a-hover($light, $bottomHover);
+					}
+				}
+			}
+		}
+	}
+}

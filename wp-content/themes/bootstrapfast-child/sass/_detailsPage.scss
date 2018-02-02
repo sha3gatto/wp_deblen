@@ -1,0 +1,98 @@
+#mid-main-content {
+
+	.mid-main-container {
+
+		#details-page {
+
+			#nav-mid-3 {
+				float: left;
+				width: 100%;
+				padding-top: 5px;
+				padding-bottom: 20px;
+
+				#page-details {
+					float: left;
+
+					.page-details-menu-class {
+
+						#menu-page-details {
+							@include reset-style();
+							@include text-align(left);
+							@include list-style(none);
+
+							.menu-item {
+								@include display(inline);
+
+								a {
+									@include menu-item-a($light, $bottom, 3px, 10px);
+									@include border-radius(15px);
+	
+									&:hover {
+										@include menu-item-a-hover($light, $bottomHover);
+									}
+								}
+							}
+						}
+					}
+				}
+
+				#print-details-property {
+					float: right;
+
+					.button-form {
+						@include button-form(1em, 3px, 10px, unset);
+					}
+				}
+			}
+
+			#thumbnails-info {
+				text-align: right;
+				color: $thumbnailsInfo;
+			}
+
+			#property-more-details {
+				float: left;
+				width: 45%;
+				padding-right: 1%;
+				color: $descriptionPropertyText;
+				font-size: $descriptionPropertyDescFS;
+				clear: both;
+
+				table {
+					border-collapse: separate;
+					border-spacing: 4px;
+
+					tr {
+						vertical-align: bottom;
+
+						td {
+							border-bottom: solid 1px $underline;
+		
+							&.right {
+								text-align: right;
+							}
+						}
+					}
+				}
+			}
+
+			#thumbnails {
+				float: right;
+				width: 35%;
+
+				table {
+					border-collapse: collapse;
+					border-spacing: 0;
+
+					td {
+						padding: 5px;
+
+						img {
+							border: solid 3px #7F7467;
+						}
+					}
+				}
+			}
+		}
+	}
+}

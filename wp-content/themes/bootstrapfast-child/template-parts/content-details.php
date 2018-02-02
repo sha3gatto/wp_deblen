@@ -27,46 +27,41 @@ $propdetails = [
 ];
 ?>
 <article id="post-<?php the_ID();?>" <?php post_class();?>>
-	<div class="content-details">
-		<div class="container-details">
-			<div class="menu-details">
-				<nav id="page-details">
-					<?php
-					wp_nav_menu( array(
-					'theme_location' => 'page-details-menu',
-					'container_class' => 'page-details-menu-class',
-					'walker' => new LinkToPropertyInfo_Walker(),
-					'walker_arg' => [$results[0]->Previous, $results[0]->Next]
-					) );
-					?>
-				</nav>
-				<span class="print-details-property">
-					<a href="javascript:window.print()" rel="nofollow">Print this page</a>
-				</span>
-			</div>
-			<div id="leftcolumn">
-				<div id="details-offer-description">
-					<h1><?php echo $results[0]->Description; ?>&nbsp;| Rent:
-						<span>$<?php echo $results[0]->Rent; ?></span>
-					</h1>
-					<h2>
-						<?php echo $results[0]->Address, ', ', $results[0]->City, ', ', $results[0]->State; ?>
-					</h2>
-					<p class="propertyDesc"><?php echo $results[0]->Details; ?></p>
+	<div id="mid-main-content">
+		<div class="mid-main-container">
+			<div id="details-page">
+				<div id="nav-mid-3">
+					<nav id="page-details">
+						<?php
+						wp_nav_menu( array(
+						'theme_location' => 'page-details-menu',
+						'container_class' => 'page-details-menu-class',
+						'walker' => new LinkToPropertyInfo_Walker(),
+						'walker_arg' => [$results[0]->Previous, $results[0]->Next]
+						) );
+						?>
+					</nav>
+					<span id="print-details-property">
+						<?php if ($results[0]->MoveInReady == 1) { ?>
+							<a class="button-form" href="request-a-waitlist">Request a waitlist</a>
+						<?php } ?>
+						<a class="button-form" href="javascript:window.print()" rel="nofollow">Print this page</a>
+					</span>
 				</div>
-				<table class="propdetails" border="0">
-					<?php foreach ($propdetails as $k => $v) { ?>
-					<tr>
-						<td class="right"><b><?php echo $k; ?>:</b></td> 
-						<td><?php echo $v; ?></td>
-					</tr>
-					<?php } ?>
-				</table>
-			</div>
-			<div id="rightcolumn">
-				<div class="imgcontainer">
-					<img name="mainimg" alt="" src="../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $results[0]->Path; ?>">
-					<div class="caption">
+				<div class="rental-offer-description">
+					<div id="property-head-details">
+						<h1><?php echo $results[0]->Description; ?>&nbsp;| Rent:
+							<span>$<?php echo $results[0]->Rent; ?></span>
+						</h1>
+						<h2>
+							<?php echo $results[0]->Address, ', ', $results[0]->City, ', ', $results[0]->State; ?>
+						</h2>
+						<p class="propertyDesc"><?php echo $results[0]->Details; ?></p>
+					</div>
+				</div>
+				<div class="rental-offer-image">
+					<img name="mainimg" alt="" src="../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $results[0]->Path; ?>" width="480">
+					<p class="caption">
 						<b>Available:&nbsp;</b>
 						<?php
 							if ($results[0]->MoveInReady == 1) {
@@ -74,31 +69,42 @@ $propdetails = [
 							} else {
 								echo $results[0]->MoveInReady;
 							}
-						 ?>
-					</div>
+						?>
+					</p>
 				</div>
 				<div id="thumbnails-info">
 					<p><small>Click on the thumbnail below to see larger image.</small></p>
 				</div>
-				<table class="thumbnails" cellspacing="5" cellpadding="0">
-					<?php 
-						$thumbnails = explode(',', $results[0]->thumbnails);
-						foreach ($thumbnails as $k => $v) {
-							if (empty($v)) { ?>			
-								<tr>
-									<td colspan="3">&nbsp;</td>
-								</tr>
-							<?php } else { ?>
-								<tr>
+				<div id="property-more-details">
+					<table>
+						<?php foreach ($propdetails as $k => $v) { ?>
+						<tr>
+							<td class="right"><b><?php echo $k; ?>:</b></td> 
+							<td><?php echo $v; ?></td>
+						</tr>
+						<?php } ?>
+					</table>
+				</div>
+				<div id="thumbnails">
+					<table>
+						<tbody>
+							<tr>
+							<?php 
+								$thumbnails = explode(',', $results[0]->thumbnails);
+								foreach ($thumbnails as $k => $v) { ?>
+									<?php if ($k == 0) { $k++; } if(($k) % 3 == 0) { ?>
+									</tr><tr>
+									<?php } ?>
 									<td>
 										<a href="#" class="thumb">
 											<img onclick="mainimg.src='../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $v; ?>';" alt="" src="../wp-content/themes/bootstrapfast-child/photos_properties/<?php echo $v; ?>" width="90">
 										</a>
 									</td>
-								</tr>
-							<?php } ?>
-					<?php } ?>
-				</table>
+								<?php } ?>
+							</tr>
+						</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 	</div>

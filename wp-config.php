@@ -26,7 +26,7 @@ define('DB_NAME', 'wp_deblen_db');
 define('DB_USER', 'wp_deblen');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'luci0010');
+define('DB_PASSWORD', 'password');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');

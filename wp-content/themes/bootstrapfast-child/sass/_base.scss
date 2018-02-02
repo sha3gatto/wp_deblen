@@ -1,0 +1,139 @@
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius !important;
+		-moz-border-radius: $radius !important;
+			-ms-border-radius: $radius !important;
+				border-radius: $radius !important;
+}
+
+@mixin list-style($type) {
+	list-style: $type;
+	list-style-type: $type;
+	list-style-image: $type;
+}
+
+@mixin rental-offer-image() {
+	position: relative;
+	border: solid 3px $borderImage;
+	font-size: 0;
+}
+
+@mixin caption() {
+	font-size: $caption;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: $captionImage;
+	opacity: .75;
+	color: $light;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+@mixin rental-offer-description-h1($fs, $ls, $tb) {
+	font-size: $fs;
+	text-transform: uppercase;
+	letter-spacing: $ls;
+	color: $descriptionH1;
+	margin: $tb 0;
+}
+
+@mixin rental-offer-description-span() {
+	color: $descriptionSpan;
+}
+
+@mixin rental-offer-description-h2($fs, $mt, $mb) {
+	font-size: $fs;
+	margin-top: $mt;
+	margin-bottom: $mb;
+	font-weight: normal;
+	color: $descriptionH2;
+}
+
+@mixin rental-offer-description-propertyDesc($fs, $mb) {
+	font-size: $fs;
+	color: $descriptionPropertyText;
+	margin-bottom: $mb;
+}
+
+@mixin menu-item-a($l, $b, $p1, $p2) {
+	color: $l;
+	background: $b;
+	text-decoration: none;
+	padding: $p1 $p2;
+}
+
+@mixin menu-item-a-hover($l, $bh) {
+	color: $l;
+	background-color: $bh;
+}
+
+@mixin reset-style() {
+	margin: 0;
+	padding: 0;
+}
+
+@mixin text-align($a) {
+	text-align: $a;
+}
+
+@mixin display($d) {
+	display: $d;
+}
+
+@mixin button-form($fs, $tb, $lr, $d) {
+	font-size: $fs;
+	padding: $tb $lr;
+	display: $d;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: $primary;
+	font-family: $fontStack !important;
+	font-size: $body !important;
+}
+
+.required {
+	color: $required;
+}
+
+.success {
+	color: $succes;
+}
+
+.failure {
+	h1 {
+		color: $failureH1;
+	}
+	p {
+		color: $failureP;
+	}
+}
+
+.disabled-paging {
+	pointer-events: none;
+	a {
+		background-color: $disabledPaging !important;
+	}
+}
+
+.button-form {
+	color: $light !important;
+	background: $bottom !important;
+	@include border-radius(15px);
+	border: none !important;
+	font-size: $buttonForm;
+	cursor: pointer;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	&:hover {
+		background-color: $bottomHover !important;
+	}
+}

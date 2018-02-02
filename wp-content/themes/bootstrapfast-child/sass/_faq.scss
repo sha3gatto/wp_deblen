@@ -1,0 +1,29 @@
+#faq {
+	color: $descriptionPropertyText;
+	h1 {
+		color: $descriptionH1;
+		font-size: $descriptionH1FS;
+	}
+
+	h2 {
+		color: $descriptionH2;
+		font-size: 1.6em;
+	}
+
+	section {
+		padding: 0 90px 0 20px;
+
+		p {
+			font-size: 1.3em;
+		}
+	}
+
+	#eqo-picture {
+
+		#picture {
+			margin-left: auto;
+			margin-right: auto;
+			width: 17em;
+		}
+	}
+}
