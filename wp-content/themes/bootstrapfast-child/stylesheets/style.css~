@@ -1,5 +1,0 @@
-/* line 1, ../sass/_base.scss */
-body {
-  color: #ff00ff;
-  font: 100% Helvetica, sans-serif;
-}
